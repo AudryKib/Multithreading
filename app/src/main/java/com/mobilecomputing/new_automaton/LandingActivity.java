@@ -9,15 +9,14 @@ import android.widget.Button;
 
 public class LandingActivity extends AppCompatActivity {
 
-    Button getStarted;
+     Button Start;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_landing);
+        Start = findViewById(R.id.button_get_started);
 
-
-        getStarted = findViewById(R.id.button_get_started);
-
-        getStarted.setOnClickListener(new View.OnClickListener() {
+        Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent getStartedActivityIntent = new Intent(LandingActivity.this, MainActivity.class);

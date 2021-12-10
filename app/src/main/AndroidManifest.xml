@@ -16,15 +16,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.New_Automaton">
         <activity
+            android:name=".ConversionActivity"
+            android:parentActivityName=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-
+            android:parentActivityName=".LandingActivity"
             android:exported="false" />
         <activity
             android:name=".LandingActivity"
-
-            android:exported="false" />
-        <activity
-            android:name=".ConversionActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

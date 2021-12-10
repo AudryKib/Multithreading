@@ -10,7 +10,7 @@
     android:rotationX="-4"
     tools:context=".ConversionActivity">
 
-    <TextView
+    <EditText
         android:id="@+id/text_view_retrieved"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

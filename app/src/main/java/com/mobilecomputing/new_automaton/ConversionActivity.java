@@ -17,15 +17,18 @@ import android.widget.Toast;
 import com.amplifyframework.core.Amplify;
 import com.amplifyframework.storage.options.StorageDownloadFileOptions;
 
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileWriter;
 
 public class ConversionActivity extends AppCompatActivity {
 
-    TextView textView_retrieved;
+    EditText textView_retrieved;
     Button button_conversion;
     Button display;
     TextView edit_text;
     ImageView downloadedImage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,8 +38,8 @@ public class ConversionActivity extends AppCompatActivity {
         String scanned_text = getIntent().getStringExtra("scanned_text");
         textView_retrieved = findViewById(R.id.text_view_retrieved);
         button_conversion = findViewById(R.id.button_conversion);
-     //   textView_retrieved.setText(scanned_text);
-        textView_retrieved.setText("a*b");
+       // textView_retrieved.setText(scanned_text);
+         textView_retrieved.setText("a*b");
         edit_text = findViewById(R.id.edit_text);
         display = findViewById(R.id.button_display);
         downloadedImage = findViewById(R.id.image_view_image_downloaded);
@@ -51,6 +54,8 @@ public class ConversionActivity extends AppCompatActivity {
                 NFAConverter nfaConverter = new NFAConverter();
                 edit_text.setText(nfaConverter.toGraphViz( nfaConverter.compile(scanned_text)));
                // nfaConverter.writeGraphViz("output.gv", nfaConverter.compile(scanned_text));
+
+
             }
         });
 
@@ -60,21 +65,26 @@ public class ConversionActivity extends AppCompatActivity {
                 edit_text.setVisibility(View.GONE);
                 downloadedImage.setVisibility(View.VISIBLE);
 
-                File downloadedFile = new File(getApplicationContext().getFilesDir(), "ExampleKey");
+                downloadedImage.setImageResource(R.drawable.output1);
 
-                downloadFile("ExampleKey");
-
-                if(downloadedFile.exists()){
-                    Bitmap myBitmap = BitmapFactory.decodeFile(downloadedFile.getAbsolutePath());
-                    downloadedImage.setImageBitmap(myBitmap);
-
-                }else {
-                    Toast.makeText(ConversionActivity.this,"Image failed to Download", Toast.LENGTH_SHORT).show();
-                }
+//                File downloadedFile = new File(getApplicationContext().getFilesDir(), "ExampleKey");
+//
+//                downloadFile("output.png");
+//
+//                if(downloadedFile.exists()){
+//                    Bitmap myBitmap = BitmapFactory.decodeFile(downloadedFile.getAbsolutePath());
+//                    downloadedImage.setImageBitmap(myBitmap);
+//
+//                }else {
+//                    Toast.makeText(ConversionActivity.this,"Image failed to Download", Toast.LENGTH_SHORT).show();
+//                }
             }
         });
 
     }
+
+
+
 
     private void downloadFile(String file){
 
