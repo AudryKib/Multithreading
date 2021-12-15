@@ -61,8 +61,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
-        StrictMode.setVmPolicy(builder.build());
+
 
         if(ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED){

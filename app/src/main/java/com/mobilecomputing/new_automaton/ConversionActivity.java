@@ -65,19 +65,19 @@ public class ConversionActivity extends AppCompatActivity {
                 edit_text.setVisibility(View.GONE);
                 downloadedImage.setVisibility(View.VISIBLE);
 
-                downloadedImage.setImageResource(R.drawable.output1);
+        //        downloadedImage.setImageResource(R.drawable.output1);
 
-//                File downloadedFile = new File(getApplicationContext().getFilesDir(), "ExampleKey");
-//
-//                downloadFile("output.png");
-//
-//                if(downloadedFile.exists()){
-//                    Bitmap myBitmap = BitmapFactory.decodeFile(downloadedFile.getAbsolutePath());
-//                    downloadedImage.setImageBitmap(myBitmap);
-//
-//                }else {
-//                    Toast.makeText(ConversionActivity.this,"Image failed to Download", Toast.LENGTH_SHORT).show();
-//                }
+                File downloadedFile = new File(getApplicationContext().getFilesDir(), "ExampleKey");
+
+                downloadFile("output.png");
+
+                if(downloadedFile.exists()){
+                    Bitmap myBitmap = BitmapFactory.decodeFile(downloadedFile.getAbsolutePath());
+                    downloadedImage.setImageBitmap(myBitmap);
+
+                }else {
+                    Toast.makeText(ConversionActivity.this,"Image failed to Download", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
