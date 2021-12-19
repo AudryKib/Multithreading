@@ -157,9 +157,10 @@ public class ConversionActivity extends AppCompatActivity {
      * Function to upload a file to aws
      * **/
 
+//    new AmazonS3Client(awsCreds, Region.getRegion("us-east-1"))
     public void uploadWithTransferUtility(File f, int gen) {
 
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIARCCE5UO7VZBLYP4T", "XvXWOh43/zgJCvTNEE3SQRsRiITewEgNBNMIJB/i");
+        BasicAWSCredentials awsCreds = new BasicAWSCredentials("", "");
 
         TransferUtility transferUtility =
                 TransferUtility.builder()
@@ -212,7 +213,7 @@ public class ConversionActivity extends AppCompatActivity {
 
     private void downloadWithTransferUtility() {
 
-        BasicAWSCredentials awsCreds = new BasicAWSCredentials("AKIARCCE5UO7VZBLYP4T", "XvXWOh43/zgJCvTNEE3SQRsRiITewEgNBNMIJB/i");
+        BasicAWSCredentials awsCreds = new BasicAWSCredentials("", "");
         TransferUtility transferUtility =
                 TransferUtility.builder()
                         .context(getApplicationContext())
